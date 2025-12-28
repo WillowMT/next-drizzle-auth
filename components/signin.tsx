@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signIn } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 interface SignInFormData {
   email: string;
@@ -45,17 +46,15 @@ export function SignIn() {
     setIsLoading(true);
     setError(null);
 
-    try {
-      await signIn.email({
-        email: data.email,
-        password: data.password,
-        rememberMe: data.rememberMe,
-        callbackURL: "/",
-      });
-      reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
+    const { error, data: signInData } = await signIn.email({
+      email: data.email,
+      password: data.password,
+      rememberMe: data.rememberMe,
+      callbackURL: "/",
+
+    })
+    if (error) {
+      toast.error(error.message ?? "An error occurred");
       setIsLoading(false);
     }
   };

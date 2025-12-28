@@ -15,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signUp } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 interface SignUpFormData {
   name: string;
@@ -38,18 +39,17 @@ export function SignUp() {
     setIsLoading(true);
     setError(null);
 
-    try {
-      await signUp.email({
-        email: data.email,
-        password: data.password,
-        name: data.name,
-      });
-      reset();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
+    const { error, data: signUpData } = await signUp.email({
+      email: data.email,
+      password: data.password,
+      name: data.name,
+      callbackURL: "/",
+    })
+    if (error) {
+      toast.error(error.message ?? "An error occurred");
       setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   return (
