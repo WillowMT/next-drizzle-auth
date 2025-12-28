@@ -11,6 +11,10 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
+import { SignIn } from "@/components/signin";
+import { SignUp } from "@/components/signup";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Profile } from "@/components/profile";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -104,12 +108,7 @@ export function Navbar() {
         </div>
         {/* Right side */}
         <div className="flex items-center gap-2">
-          <Button asChild className="text-sm" size="sm" variant="ghost">
-            <a href="#">Sign In</a>
-          </Button>
-          <Button asChild className="text-sm" size="sm">
-            <a href="#">Get Started</a>
-          </Button>
+          <Profile />
         </div>
       </div>
     </header>
