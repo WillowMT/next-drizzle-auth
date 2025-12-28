@@ -1,9 +1,8 @@
 {
-  "name": "create-drizzle-app",
-  "version": "0.1.0", 
-  "private": true,
+  "name": "create-next-drizzle",
+  "version": "0.1.1",
   "bin": {
-    "create-drizzle-app": "./bin/cli.js"
+    "create-next-drizzle": "./bin/cli.js"
   },
   "scripts": {
     "dev": "next dev",

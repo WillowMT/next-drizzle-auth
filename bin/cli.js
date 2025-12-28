@@ -34,7 +34,9 @@ try {
         'bun.lock',
         '.git',
         'bin',
-        '.DS_Store'
+        '.DS_Store',
+        '.next',
+        '.env'
     ];
 
     // Copy template files
@@ -86,10 +88,10 @@ try {
 
     try {
         // Try pnpm first (as per user rules), then npm
-        if (hasCommand('pnpm')) {
-            execSync('pnpm install', { stdio: 'inherit' });
-        } else if (hasCommand('bun')) {
+        if (hasCommand('bun')) {
             execSync('bun install', { stdio: 'inherit' });
+        } else if (hasCommand('pnpm')) {
+            execSync('pnpm install', { stdio: 'inherit' });
         } else {
             execSync('npm install', { stdio: 'inherit' });
         }
