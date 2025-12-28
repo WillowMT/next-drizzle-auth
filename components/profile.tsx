@@ -33,7 +33,7 @@ export function Profile() {
         <DropdownMenuTrigger asChild>
           <Button className="h-auto p-0 hover:bg-transparent" variant="ghost">
             <Avatar>
-              <AvatarImage alt="Profile image" src={session?.user?.image ?? `https://api.dicebear.com/9.x/adventurer/svg?seed=${session?.user?.name}`} />
+              <AvatarImage alt="Profile image" src={session?.user?.image ?? `https://api.dicebear.com/9.x/glass/svg?seed=${session?.user?.name}`} />
               <AvatarFallback>{session?.user?.name?.charAt(0)}</AvatarFallback>
             </Avatar>
             <ChevronDownIcon
