@@ -149,11 +149,11 @@ export function SignUp() {
           </Button>
         </form>
 
-        <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
+        {/* <div className="flex items-center gap-3 before:h-px before:flex-1 before:bg-border after:h-px after:flex-1 after:bg-border">
           <span className="text-muted-foreground text-xs">Or</span>
         </div>
 
-        <Button variant="outline">Continue with Google</Button>
+        <Button variant="outline">Continue with Google</Button> */}
 
         <p className="text-center text-muted-foreground text-xs">
           By signing up you agree to our{" "}

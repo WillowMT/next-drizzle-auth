@@ -11,14 +11,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import Image from "next/image";
-import { SignIn } from "@/components/signin";
-import { SignUp } from "@/components/signup";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Profile } from "@/components/profile";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { active: true, href: "#", label: "Home" },
+  { active: false, href: "#", label: "Home" },
   { href: "#", label: "Features" },
   { href: "#", label: "Pricing" },
   { href: "#", label: "About" },
@@ -106,9 +104,9 @@ export function Navbar() {
             </NavigationMenu>
           </div>
         </div>
-        {/* Right side */}
         <div className="flex items-center gap-2">
           <Profile />
+          <ThemeToggle />
         </div>
       </div>
     </header>
